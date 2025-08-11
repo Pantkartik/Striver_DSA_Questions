@@ -17,6 +17,26 @@
 // Explanation: The only value in nums is 10, so there is no second largest value, thus -1 is returned
 
 
+
+
+
+//  approach 1 : Brute force 
+// we have to first sort the array than traversing negatively form index last to index first we check that the 
+//  largest = arr[n-1]  
+//  loop from arr[n-2]   to i =0 checking if the arr[i]!=largest than second_largest is the arr[i]
+
+largest=arr[n-1];
+for(int i=n-2;i>=0;i--){
+if (arr[i]!=largest){
+    int second_largest=arr[i] ;
+}
+}
+
+
+
+
+
+//  optimal code 
 // #include<iostream>
 // #include<climits>
 // using namespace std;
