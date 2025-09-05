@@ -47,14 +47,34 @@ int main(){
 
     
     */
- vector<int>v;
- v.push_back(6);
- v.push_back(10);
- v.push_back(9);
+//  vector<int>v;
+//  v.push_back(6);
+//  v.push_back(10);
+//  v.push_back(9);
 
- vector<int>::iterator it;
- for(it=v.begin();it!=v.end();++it){
-    cout<<*it<<" ";
+//  vector<int>::iterator it;
+//  for(it=v.begin();it!=v.end();++it){
+//     cout<<*it<<" ";
+//  }
+
+
+ // Insertion of element in a vector
+
+ vector<int>v{8,21,234};
+//  v.push_back(6);
+//  v.push_back(41);
+//  v.push_back(0);
+//  v.push_back(7);
+
+ v.insert(v.begin()+1,4);
+
+
+// to delete a specific element 
+
+v.clear();
+
+ for(int i=0;i<v.size();i++){
+    cout<<v[i]<<" ";
  }
 
 
