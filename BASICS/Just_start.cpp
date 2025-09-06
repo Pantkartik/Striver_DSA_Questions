@@ -1,6 +1,8 @@
 // skeleton code 
 
 #include<iostream>
+
+#include<bits/stdc++.h>
 #include<math.h>
 #include<string>
 using namespace std;

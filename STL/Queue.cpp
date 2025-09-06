@@ -22,6 +22,8 @@ int main(){
     que.pop();
 
     cout<<que.front()<<endl;
+
+    // to know the last element 
     cout<<que.back()<<endl;
 
     // this proves that the queue is a fifo 

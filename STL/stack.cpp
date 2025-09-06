@@ -26,7 +26,7 @@ int main(){
     // to clear the stack
 
     stack.empty();
-    stack<int>::iterator it;
+
     for(it=st.top();it!=st.size();++it){
         cout<<*it<<endl;
     }
