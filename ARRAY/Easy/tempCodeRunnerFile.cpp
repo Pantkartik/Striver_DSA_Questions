@@ -1,21 +1,17 @@
-#include<iostream>
-using namespace std;
-int sort(int arr[],int size){
-  int temp=0;
-  for(int i=0;i<size;i++){
-    if(arr[i+1]>arr[i]){
-        temp=arr[i];
-        arr[i]=arr[i+1];
-        arr[i+1]=temp;
-    }
-    else return -1;
-  }
-}
-int main(){
-    int arr[6]={3,1,6,4,9,10};
-    int size=6;
-    for(int i=1;i<size;i++){
 
-        cout<<sort(arr,size);
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int array1[5]={5,4,3,2,1};
+    int n=5;
+    int largest=array1[0];   // consider the first element to be the largest
+    for(int i=1;i<n;i++){
+        if(array1[i]>largest){
+            largest=array1[i];
+        }
     }
+    cout<<"Largest elem :"<<largest<<endl;
+ 
+    
 }

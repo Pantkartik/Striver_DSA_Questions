@@ -1,56 +1,39 @@
-// Given an array of integers nums, return the value of the largest element in the array
-
-// Examples:
-// Input: nums = [3, 3, 6, 1]
-
-// Output: 6
-
-// Explanation: The largest element in array is 6
-
-// Input: nums = [3, 3, 0, 99, -40]
-
-// Output: 99
-
-// Explanation: The largest element in array is 99
+// largest element in an array 
 
 
-//  Approach : to check the largest number we have to acces each address 
-//  and compare it with the next 
+// brute force 
+/*  1. sort 
+    2. than the last element will be the largest 
+*/
 
-// #include<iostream>
-// using namespace std;
-// int largest(int arr[],int size){
-//     int max= arr[0];
-//     for(int i=1;i< size;i++){
-//             if(arr[i]>max){
-//                 max = arr[i];
-            
-//             }
-//             } return max;
-// }
-// int main(){
-//     int arr[6]={1,342,562,3,7,12};
-//     int size=6;
-//     int print_largest=largest(arr,size);
-//     cout<<"The largest elem : "<<print_largest<<endl;
-// }
-
-
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int large(int arr[],int size){
-    //  lets declare a starting value max
-    int max = arr[0];
-    for(int i=1;i<size;i++){
-        if(arr[i]>max){
-            max=arr[i];
-            
-        }
-    } return max;
-}
 int main(){
-    int arr[6]={1,234,52,55,77,45};
-    int size = 6;
-    int result = large(arr,size);
-    cout<<result<<endl;
+int array[5]={1,4,52,12,9};
+int n=5;
+    sort(array,array+n);
+
+
+// the largest is the last element 
+cout<<array[n-1]<<endl;
 }
+
+
+// optimal code
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int array1[5]={5,4,3,2,1};
+    int n=5;
+    int largest=array1[0];   // consider the first element to be the largest
+    for(int i=1;i<n;i++){
+        if(array1[i]>largest){
+            largest=array1[i];
+        }
+    }
+    cout<<"Largest elem :"<<largest<<endl;
+ 
+    
+} 
