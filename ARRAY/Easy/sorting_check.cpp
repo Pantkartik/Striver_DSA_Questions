@@ -10,25 +10,20 @@
 //array B of the same length such that B[i] == A[(i+x) % A.length] for every valid index i.
 
  
-
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int sort(int arr[],int size){
-  int temp=0;
-  for(int i=0;i<size;i++){
-    if(arr[i+1]>arr[i]){
-        temp=arr[i+1];
-        arr[i+1]=arr[i];
-        arr[i]=temp;
-    }
-    else return -1;
-  }
-}
-int main(){
-    int arr[6]={3,1,6,4,9,10};
-    int size=6;
-    for(int i=1;i<size;i++){
 
-        cout<<sort(arr,size);
-    }
+int main(){
+  int array[5]={1,2,3,5,7};
+  int n=5;
+  for(int i=1;i<n;i++){
+        if(array[i]>=array[i-1]){
+          continue;
+        }
+        else{
+          cout<<"Not sorted"<<endl;
+          break;
+        }
+        cout<<"Array is sorted"<<endl;
+  }
 }
