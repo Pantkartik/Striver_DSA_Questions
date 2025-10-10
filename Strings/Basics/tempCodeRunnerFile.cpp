@@ -6,13 +6,13 @@ int main(){
     char name[20];
   
     cin>>name;
-    cout<<name<<endl;
+    cout<<name;
     int len=0;
    
     //  to calculate the length of string 
-   for(int i=0;name[i]!='\0';i++){
+   for(int i=0;name[i]!='\0',i++){
 len++;
    } 
 
-   cout<<"length of string is " <<len<<endl;
+   cout<<len<<endl;
 }
