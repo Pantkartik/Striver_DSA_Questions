@@ -7,7 +7,7 @@ int main(){
 
     // declaring the map 
 
-    map<int,int>mpp;
+    unordered_map<int,int>mpp;
     for(int i=0;i<size;i++){
         mpp[arr[i]]++;
 
@@ -28,5 +28,13 @@ int main(){
         // calling the map 
 
         cout<<mpp[query]<<endl;
+    }
+
+
+    // iterating in a map using an iterator 
+
+    for(auto it: mpp   ){
+        cout<<"First key value is "<<it.first<<" : "<<it.second
+        <<endl;
     }
 }
