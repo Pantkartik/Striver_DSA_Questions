@@ -60,7 +60,13 @@ int main(){
 
     // creating a singlt ll and than pushing index 0 to it and poiniting the next address
 
-    Node*y=new Node(arr[0],nullptr);
-    cout<<y->data<<endl;
+    Node*head=new Node(arr[0],nullptr);
+    cout<<head->data<<endl;
+
+    Node*temp=head;
+    while(temp!=nullptr){
+        cout<< temp->data <<" "<<endl;
+        temp=temp->next;
+    }
 }
 
