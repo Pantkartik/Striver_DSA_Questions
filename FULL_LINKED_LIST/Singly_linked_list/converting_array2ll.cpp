@@ -46,20 +46,36 @@ int length_ll(Node *head){
     return count;
 }
 
+// to search the given element in a linked list
+int search(Node *head,int k){
+    Node*temp=head;
+    while(temp!=nullptr){
+        
+        if(temp->data==k){
+
+            return 1;
+            temp=temp->next;
+        }
+        else return 0;
+    }
+}
 int main(){
     vector<int>array={1,2,3,4,5,6};
     Node*head=Convert_array2LL(array);
-    cout<<head->data;
+    // cout<<head->data;
 
 
     // traversal in ll 
     Node*temp=head;
     while(temp!=nullptr){
-        cout<< temp->data <<endl;
+        // cout<< temp->data <<endl;
         temp=temp->next;
     }
 
     // length of ll 
 
-    cout<<length_ll(head);
+    // cout<<length_ll(head);
+
+    // search the k element in ll
+    cout<<search(head,1);
 }
