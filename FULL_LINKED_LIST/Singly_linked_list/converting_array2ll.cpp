@@ -54,10 +54,10 @@ int search(Node *head,int k){
         if(temp->data==k){
 
             return 1;
-            temp=temp->next;
         }
-        else return 0;
+        temp=temp->next;
     }
+     return 0;
 }
 int main(){
     vector<int>array={1,2,3,4,5,6};
