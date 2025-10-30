@@ -1,24 +1,18 @@
-// to convert a array to linked list traverse in it , length of linked list , to delete the head of the linked list 
+// to delete the head in the linked list we just make a node head temp and temp pass to next and than delete the temp 
 
-#include<bits/stdc++.h>
-using namespace std;
+// a little code snippet is like this 
 
-// making of the class of linked list head 
 
-class Node{
-    public:
-        int data;
-        Node*next;
+Node*delete_head(Node*head){
 
-    // constructor 
-    Node(int data1){
-        data=data1;
-        next=nullptr;
-    }
-};
+    Node*head=temp;
+    head=head->next;
+    free(head);
 
-// making a function for converting the array to linked list 
+    return head;
 
-Node*convert_array2LL(Node*head){
     
 }
+
+
+
