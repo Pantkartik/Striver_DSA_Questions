@@ -79,3 +79,23 @@ int main() {
     
     return 0;
 }
+
+
+
+
+
+// to remove the tail of the linked list 
+
+/*  Logic  is that we first point temp to head and move head one elem before the last elem and remove the head*/
+
+Node*tail_remove(Node*head){
+    Node*temp=head;
+    if(head==nullptr || head->next==nullptr)return nullptr;
+    while(temp->next->next!=nullptr){
+        temp=temp->next;
+
+    }
+    free(head);
+    temp->next=nullptr;
+    return head;
+}
