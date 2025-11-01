@@ -88,14 +88,58 @@ int main() {
 
 /*  Logic  is that we first point temp to head and move head one elem before the last elem and remove the head*/
 
-Node*tail_remove(Node*head){
+Node*delete_tail_linked_list(Node*head){
     Node*temp=head;
-    if(head==nullptr || head->next==nullptr)return nullptr;
-    while(temp->next->next!=nullptr){
+    if(head==nullptr || head->temp==nullptr)nullptr;
+    while(head->next->next!=nullptr){
         temp=temp->next;
-
     }
     free(head);
     temp->next=nullptr;
+    return head;
+}
+
+
+
+// to remove the head of the linked list 
+
+/* The logic is this : we point the temp to the head and mover also to the head and pass the temp to next  which passes the head to the next elem and we delete the old head  */
+
+// lets see
+
+Node*removehead(Node*head){
+    Node*head=temp;
+    head=head->next;
+    free(head);
+    return head;
+}
+
+
+
+
+// remove the tail of the linked list 
+Node*remove_tail(Node*head){
+    Node*temp=head;
+    if(head==nullptr || head->next==nullptr)return nullptr;
+    while(head->next->next!=nullptr){
+        temp=temp->next;
+    }
+    free(head);
+    temp->next=nullptr;
+    return head;
+}
+
+
+
+// to convert the array into linked list
+
+Node*convert_array_ll(vector<int>array){
+    Node*head=new node(array[0]);
+    Node*mover=head;
+    for(int i=1;i<array.size();i++){
+        Node*temp=new node(array[i]);
+        mover->next=temp;
+        mover=temp;
+    }
     return head;
 }
