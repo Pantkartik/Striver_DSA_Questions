@@ -11,7 +11,11 @@ we resolve the edge case
 #include<bits/stdc++.h>
 using namespace std;
 
+
+//  making a class for the head 
+
 class Node{
+    // making in public 
 public:
     int data;
     Node*next;
@@ -22,60 +26,66 @@ public:
     }
 };
 
-// converting a array into  linked list 
-Node*convert_array__ll(vector<int>array){
-    Node*head=new Node(array[0]);
-    Node*mover=head;
 
-    for(int i=1;i<array.size();i++){
-        Node*temp=new Node(array[i]);
-        mover->next=temp;
-        mover=temp;
-    }
-    return head;
+
+//  converting the array to the linked list
+
+Node*convert_array_linked_list(vector<int>array){
+  Node*head= new Node(array[0]);
+  Node*mover=head;
+
+  for(int i=1;i<array.size();i++){
+    Node*temp=new Node(array[i]);
+    mover->next=temp;
+    mover=temp;
+  }
+  return head;
 }
 
+Node*delete_head_linked_list(Node*head){
+// to delete the head the logic is that we point the temp to head and save the head than we move temp =temp->next and free the head than return the head 
 
-// to remove the kth elemenent in the linked list 
+// lets seee 
+Node*head=temp;
+head=head->next;
+delete head;
+return head;
+}
+Node*delete_tail_linked_list(Node*head){
+// to remove the tail we iterate the temp one elem before the nullptr and remove the temp->next 
+if(head==nullptr || head->next==nullptr)return nullptr;
+Node*head=temp;
+while(head->next->next!=nullptr){
+ temp=temp->next;
+}
+delete temp;
+temp->next=nullptr;
+return head;
+}
+
+Node*delete_kth_elem_linked_list((Node*head,int k)){
+// to remove the kth elem 
+// edge cases 
+/*  1.  if ll is empty or have only 1 elem head we return the head
+    2.  if cnt==k   we remove the head 
+*/
+
+// if cnt!=k we iterate till nullptr and prev->next=prev->next->next delete temp break and prev=temp, temp=temp->next
 
 
-Node*remove_kth_elem(Node*head,int k){
-    if(head==nullptr)return nullptr;
-    if(k==1){
-        Node*temp=head;
-        head=head->next;
+// first we declare the neccesary variables 
+
+Node*temp=head;
+Node*prev=nullptr;
+int cnt=0;
+while(temp!=nullptr){
+    if(cnt==k){
+        prev->next=prev->next->next;
         delete temp;
-        return head;
+        break;
     }
-    // we need to declare the counter for comparison to k and node*temp=head,prev=nullptr
-    int cnt=0;
-    Node*temp=head;
-    Node*prev=nullptr;
-    while(temp!=nullptr){
-        cnt++;
-        if(cnt==k){
-            prev->next=prev->next->next;
-            free(temp);
-            break;
-        }
-        prev=temp;
-        temp=temp->next;
-    }
-    return head;
+    prev=temp;
+    temp=temp->next;
 }
-
-
-
-int main(){
-    vector<int>array={1,2,34,5,6};
-    Node*head=convert_array__ll(array);
-    cout<<head->data<<endl;
-
-
-    head=remove_kth_elem(head,1);
-    Node*temp=head;
-    while(temp!=nullptr){
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }
+return head;
 }
