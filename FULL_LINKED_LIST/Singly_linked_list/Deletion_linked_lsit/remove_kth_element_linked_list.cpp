@@ -79,6 +79,7 @@ Node*temp=head;
 Node*prev=nullptr;
 int cnt=0;
 while(temp!=nullptr){
+    cnt++;
     if(cnt==k){
         prev->next=prev->next->next;
         delete temp;
