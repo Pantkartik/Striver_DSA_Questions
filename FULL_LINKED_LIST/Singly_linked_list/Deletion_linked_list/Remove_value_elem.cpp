@@ -76,16 +76,3 @@ Node*remove_elem(Node*head,int elem){
 
 
 
-// remove the kth elem in a linked list 
-Node*remove_kth_elem(Node*head,int k){
-    Node*temp=head;
-    if(head==nullptr)return nullptr;
-    if(k==1){
-        head=head->next;
-        delete temp;
-        return head;
-    }
-    while(temp!=nullptr){
-        
-    }
-}
