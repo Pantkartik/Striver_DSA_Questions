@@ -28,29 +28,27 @@ break;
 
 */
 
-
-
-Node*insertion_kth_place(Node*head,int k,int el){
-    Node*temp=head;
+Node*insertion_kth_place(Node*head,int k,int elem){
     if(head==nullptr){
-        if(k==1)return new Node(el,nullptr);
-        return head;
-        else cout<<"Error"<<endl;
+        if(k==1){
+            return new Node(elem,nullptr);
+        }
+        else{
+            return head;
+        }
     }
-    // if k==1
     if(k==1){
-        Node*temp=new Node(el,head);
-        return temp;
+        return new node(elem,head);
     }
-    // k >1
-    int cnt=1,temp=head;
+    int cnt=0;
+    Node*temp=head;
     while(temp!=nullptr){
         cnt++;
         if(cnt==k-1){
-            Node*x=new Node(el);
+            Node*x=new Node(elem);
             x->next=temp->next;
             temp->next=x;
-           break;
+            break;
         }
         temp=temp->next;
     }
