@@ -13,3 +13,5 @@ consist of each and every question of every topic including tuf, gfg,leetcode
 
 - Divyanshi Ghume 
 
+- Krishna Punasya
+
