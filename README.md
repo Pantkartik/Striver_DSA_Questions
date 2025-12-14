@@ -12,6 +12,5 @@ consist of each and every question of every topic including tuf, gfg,leetcode
 ## Contributors
 
 - Divyanshi Ghume 
-
 - Krishna Punasya
-
+  
